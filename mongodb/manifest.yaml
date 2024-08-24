@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: mongodb
- labels: # these labels are deployment labels
-  app: mongodb
-  project: roboshop
-  tier: db 
- spec:
+  name: mongodb
+  namespace: roboshop
+  labels: # these labels are deployment labels
+    app: mongodb
+    project: roboshop
+    tier: db
+spec:
   replicas: 1
   selector:
     matchLabels: # these labels are used to find the pods
       app: mongodb
       project: roboshop
       tier: db
- template: #pod starts from here 
+  template:
     metadata:
       labels: # these labels are pod labels
         app: mongodb
@@ -38,4 +39,4 @@ spec:
   ports:
   - protocol: TCP
     port: 27017 #service-port
-    targetPort: 27017 #container-port        
+    targetPort: 27017 #container-port
