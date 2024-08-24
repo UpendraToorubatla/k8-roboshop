@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
- name: catalogue
- namespace: roboshop
+  name: catalogue
+  namespace: roboshop
 data:
- MONGO: "true"
+  MONGO: "true"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -14,7 +14,7 @@ metadata:
   labels: # these labels are deployment labels
     app: catalogue
     project: roboshop
-    tier: app 
+    tier: app
 spec:
   replicas: 1
   selector:
@@ -28,7 +28,7 @@ spec:
         app: catalogue
         project: roboshop
         tier: app
-  spec:
+    spec:
       containers:
       - name: catalogue
         image: joindevops/catalogue:v1
