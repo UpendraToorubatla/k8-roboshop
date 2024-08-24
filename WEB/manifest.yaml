@@ -135,7 +135,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: joindevops/web:v1
+        image: upendra1240/web:v1
         imagePullPolicy: Always
         volumeMounts:
         - name: nginx-conf
