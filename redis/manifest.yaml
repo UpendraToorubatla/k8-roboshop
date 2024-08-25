@@ -49,5 +49,5 @@ spec:
     tier: app
   ports:
   - protocol: TCP
-    port: 6379 #service-port
+    port: 6379 #service-por
     targetPort: 6379 #container-port
